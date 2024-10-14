@@ -1,0 +1,122 @@
+[versions]
+agp = "8.6.0"
+kotlin = "2.0.20"
+kotlinTest = "1.9.0-RC.2"
+coreKtx = "1.13.1"
+junit5 = "5.11.1"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+lifecycle = "2.8.6"
+fragmentKtx = "1.8.4"
+mockk = "1.13.2"
+espressoCore = "3.6.1"
+activityCompose = "1.9.2"
+composeBom = "2024.09.03"
+koin = "3.5.0"
+ktor = "1.5.0"
+serialization = "1.7.3"
+composeCompiler = "1.5.15"
+turbine = "0.13.0"
+
+[libraries]
+# Core AndroidX Dependencies
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
+
+# Lifecycle Dependencies
+androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+
+# Compose Dependencies
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+# Material Components
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+# Testing Dependencies
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+test-junit5 = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit5" }
+test-junit5-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit5" }
+test-kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinTest" }
+test-mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+test-turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+
+# Koin Dependencies
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
+
+# Ktor Dependencies
+ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
+ktor-client-android = { group = "io.ktor", name = "ktor-client-android", version.ref = "ktor" }
+ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
+ktor-client-json = { group = "io.ktor", name = "ktor-client-json", version.ref = "ktor" }
+ktor-client-serialization = { group = "io.ktor", name = "ktor-client-serialization", version.ref = "ktor" }
+ktor-client-test = { group = "io.ktor", name = "ktor-client-mock", version.ref = "ktor" }
+
+# Kotlinx Serialization Dependencies
+kotlinx-serialization-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "serialization" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+[bundles]
+app-impl = [
+    "androidx-core-ktx",
+    "androidx-appcompat",
+    "androidx-lifecycle-viewmodel",
+    "androidx-lifecycle-runtime-ktx",
+    "androidx-fragment-ktx",
+    "material",
+    "koin-core",
+    "koin-android"
+]
+test-impl = [
+    "test-junit5",
+    "test-kotlinx-coroutines",
+    "test-mockk",
+    "ktor-client-test",
+    "test-turbine",
+]
+
+compose-impl = [
+    "androidx-activity-compose",
+    "androidx-ui",
+    "androidx-ui-graphics",
+    "androidx-ui-tooling",
+    "androidx-ui-tooling-preview",
+    "androidx-ui-test-junit4",
+    "androidx-ui-test-manifest",
+    "androidx-material3",
+    "koin-androidx-compose"
+]
+
+ktor-impl = [
+    "ktor-client-core",
+    "ktor-client-android",
+    "ktor-client-logging",
+    "ktor-client-json",
+    "ktor-client-serialization"
+]
+
+serialization-impl = [
+    "kotlinx-serialization-core",
+    "kotlinx-serialization-json"
+]

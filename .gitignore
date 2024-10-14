@@ -1,0 +1,53 @@
+# Gradle
+.gradle/
+**/build/
+.externalNativeBuild/
+.cxx/
+
+# Local configuration
+/local.properties
+local.properties
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# macOS specific files
+.DS_Store
+
+# Build Output
+/build/
+**/captures/
+output.json
+
+# Dependency Caches
+**/buildSrc/.gradle/
+**/buildSrc/build/
+
+# Keystore Files (for signing)
+*.jks
+
+# Proguard files
+*.mapping
+mapping.txt
+
+# Log files
+*.log
+
+# Test results
+/test-results/
+*.xml
+
+# Gradle Wrapper
+/gradle/wrapper/gradle-wrapper.properties
+/gradle/wrapper/gradle-wrapper.jar
+
+# Miscellaneous
+.classpath
+.project
